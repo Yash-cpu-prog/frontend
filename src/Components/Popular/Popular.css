@@ -1,0 +1,60 @@
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-height: 90vh;
+    padding-top: 60px; /* Add padding to push it down */
+    margin: 100px;
+  }
+  
+  .popular h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  .popular hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+  }
+  
+  .popular-item {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Add a responsive media query to handle smaller screen sizes */
+  @media (max-width: 768px) {
+    .hero-left {
+      padding-left: 20px; /* further reduce padding on smaller screens */
+      text-align: center;
+    }
+  
+    .hero-left p {
+      font-size: 60px; /* Adjust the font size */
+    }
+  
+    .hero-latest-btn {
+      width: 220px;
+      font-size: 18px; /* Smaller button text */
+    }
+  
+    .popular h1 {
+      font-size: 36px; /* Adjust header font size */
+    }
+  
+    .popular-item {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduce grid size */
+      padding: 0 10px;
+    }
+  }
+  
+  
+  

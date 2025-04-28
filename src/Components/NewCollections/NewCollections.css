@@ -1,0 +1,59 @@
+.new-collections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 100px;
+    
+    
+  }
+  
+  .new-collections h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  .new-collections hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+  }
+  .collections{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
+    gap: 30px;
+
+  }
+
+  
+
+  
+  
+  /* Add a responsive media query to handle smaller screen sizes */
+  @media (max-width: 768px) {
+    .hero-left {
+      padding-left: 20px; /* further reduce padding on smaller screens */
+      text-align: center;
+    }
+  
+    .hero-left p {
+      font-size: 60px; /* Adjust the font size */
+    }
+  
+    .hero-latest-btn {
+      width: 220px;
+      font-size: 18px; /* Smaller button text */
+    }
+  
+    .new-collections h1 {
+      font-size: 36px; /* Adjust header font size */
+    }
+  
+    .new-collections-item {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Reduce grid size */
+      padding: 0 10px;
+    }
+  }
