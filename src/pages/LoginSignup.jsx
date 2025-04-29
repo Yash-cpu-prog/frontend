@@ -1,55 +1,92 @@
 import React, { useState } from 'react';
 import './CSS/LoginSignup.css';
 
-const LoginSignup = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
+const Signup = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    agreeTerms: false
+  });
 
-  const handleContinue = () => {
-    console.log('Sending OTP to:', email);
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
 
-    // TODO: Make API call here
-    alert(`OTP sent to ${email}`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.agreeTerms) {
+      alert('Please agree to the Terms and Conditions.');
+      return;
+    }
+
+    console.log('Form Data Submitted:', formData);
+    alert(`Account created for ${formData.name}`);
   };
 
   return (
-    <div className='loginsignup'>
-      <div className="loginsignup-container">
-        <h1>Sign Up</h1>
-        <div className="loginsignup-fields">
-          <input 
-            type="text" 
-            placeholder='Your Name' 
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+    <div className="signup-page">
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <h2>Create an Account</h2>
+
+        <label htmlFor="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="password">Create Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <div className="terms-checkbox">
+          <input
+            type="checkbox"
+            id="agreeTerms"
+            name="agreeTerms"
+            checked={formData.agreeTerms}
+            onChange={handleChange}
           />
-          <input 
-            type="email" 
-            placeholder='Email Address' 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input 
-            type="password" 
-            placeholder='Password' 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <label htmlFor="agreeTerms">I accept the Terms & Privacy Policy</label>
         </div>
-        <button onClick={handleContinue}>Continue</button>
-        <p className="loginsignup-login">
-          Already have an account? <span>Login here</span>
+
+        <button type="submit">Sign Up</button>
+
+        <p className="redirect-text">
+          Already a member? <span>Login</span>
         </p>
-        <div className="loginsignup-agree">
-          <input type="checkbox" name='' id='agree' />
-          <p>By continuing, I agree to the Terms of Use & Privacy Policy.</p>
-        </div>
-      </div>
+      </form>
     </div>
   );
 };
 
-export default LoginSignup;
+export default Signup;
+
+
 
 

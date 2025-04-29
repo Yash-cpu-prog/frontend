@@ -13,25 +13,25 @@ const Navbar = () => {
     <div className='navbar'>
       <div className="nav-logo">
         <img src={logo} alt="logo" />
-        <p>SHOPPER</p>
+        <p>BUYZAAR</p>
       </div>
 
       <ul className="nav-menu">
-        <li onClick={() => setMenu("shop")}>
-          <Link style={{ textDecoration: 'none' }} to='/'>Shop</Link>
+        <li onClick={() => setMenu("Products")}>
+          <Link style={{ textDecoration: 'none' }} to='/'>Products</Link>
           {menu === "shop" && <hr />}
         </li>
-        <li onClick={() => setMenu("mens")}>
-          <Link style={{ textDecoration: 'none' }} to='/mens'>Men</Link>
-          {menu === "mens" && <hr />}
+        <li onClick={() => setMenu("Gents")}>
+          <Link style={{ textDecoration: 'none' }} to='/mens'>Gents</Link>
+          {menu === "Gents" && <hr />}
         </li>
-        <li onClick={() => setMenu("womens")}>
-          <Link style={{ textDecoration: 'none' }} to='/womens'>Women</Link>
-          {menu === "womens" && <hr />}
+        <li onClick={() => setMenu("Ladies")}>
+          <Link style={{ textDecoration: 'none' }} to='/womens'>Ladies</Link>
+          {menu === "Ladies" && <hr />}
         </li>
-        <li onClick={() => setMenu("kids")}>
-          <Link style={{ textDecoration: 'none' }} to='/kids'>Kids</Link>
-          {menu === "kids" && <hr />}
+        <li onClick={() => setMenu("Children")}>
+          <Link style={{ textDecoration: 'none' }} to='/kids'>Children</Link>
+          {menu === "Childern" && <hr />}
         </li>
       </ul>
 
