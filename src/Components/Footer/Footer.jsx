@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './Footer.css';
 import footer_logo from '../Asset/logo_big.png';
@@ -41,5 +42,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer; 
 
